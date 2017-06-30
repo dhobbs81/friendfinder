@@ -1,38 +1,55 @@
 module.exports = {
-    setup: function(path, app, friends) {
+    setup: function(path, app, data) {
 
-        /*
+        const friends = data.friends;
+
         // GET route to get the set of friends
-        app.get("/api/friends(/:name)?", function(req, res) {
+        app.get("/api/friends(/:name?)", function(req, res) {
           var name = req.params.name;
 
+          // If the user supplied a name, return a matching friend
           if (name) {
             console.log(name);
 
             for (var friend of friends) {
-              if (name === friends[i].name) {
-                return res.json(friends);
+              if (name === friend.name) {
+                return res.json(friend);
               }
             }
-            return res.json(false);
+            return res.json({ error: `Unable to find ${name} in the set of friends. Please try again.`} );
           }
           return res.json(friends);
         });
-        */
 
-        // Create New Characters - takes in JSON input
+        // POST route to create a new friend
         app.post("/api/friends", function(req, res) {
-          // req.body hosts is equal to the JSON post sent from the user
-          var newfriend = req.body;
+            // req.body is populated with form data
+            var formdata = req.body;
 
-          console.log(newfriend);
-          console.log("YO!!!!!!!!");
+            // match form answer keys
+            var pattern = /a\d/;
 
-          // We then add the json the user sent to the character array
-          friends.push(newfriend);
+            // store the form data as a friend object
+            var newfriend = {
+                name: formdata.name,
+                photo: formdata.photo,
+                scores: []
+            };
 
-          // We then display the JSON to the users
-          res.json(newfriend);
+            // search the form data for answers
+            for (var key in formdata) {
+                if (formdata.hasOwnProperty(key) && pattern.test(key)) {
+                    newfriend.scores.push(formdata[key]);
+                }
+            }
+
+            // add the new friend
+            friends.push(newfriend);
+
+            // let the user know who their new best friend is
+            res.render('pages/friend', {
+                friend: data.findBestFriend()
+            });
         });
 
     }

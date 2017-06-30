@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Star Wars - Express</title>
+    <title>Finding Friendship</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
-              <h1 id="forms">Forms</h1>
+              <h1>FriendFinder Relationship Survey</h1>
             </div>
           </div>
         </div>
@@ -31,9 +31,22 @@
 
               <form class="form-horizontal" action="/api/friends" method="post">
 
-<label for="select" class="col-lg-2 control-label">I like outdoor activitie?
-</label>
-<div class="col-lg-10">
+              <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                  <input name="name" type="text" class="form-control" placeholder="Enter Your Name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="photo" class="col-lg-2 control-label">Photo</label>
+                <div class="col-lg-10">
+                  <input name="photo" type="text" class="form-control" placeholder="Enter the URL to your picture">
+                </div>
+              </div>
+
+<label for="select" class="col-lg-10 control-label">I like outdoor activities?</label>
+<div class="col-lg-2">
   <select name="a1" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -43,10 +56,10 @@
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 I think my partner cares about me.
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a2" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -56,10 +69,10 @@ I think my partner cares about me.
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 I like to drink regularly
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a3" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -69,10 +82,10 @@ I like to drink regularly
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 I feel confident we can deal with whatever problems might come up in our relationship.
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a4" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -82,10 +95,10 @@ I feel confident we can deal with whatever problems might come up in our relatio
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 I enjoy body art
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a5" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -96,10 +109,10 @@ I enjoy body art
 </div>
 
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 It's important to have hobbies outside of a relationship
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a6" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -109,10 +122,10 @@ It's important to have hobbies outside of a relationship
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 I consider myself happy in a relationship.
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a7" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -122,10 +135,10 @@ I consider myself happy in a relationship.
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 I don't obsessively text or harass my relationship partners
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a8" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -135,10 +148,10 @@ I don't obsessively text or harass my relationship partners
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">
+<label for="select" class="col-lg-10 control-label">
 My partner usually listens to me.
 </label>
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a9" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
@@ -148,9 +161,9 @@ My partner usually listens to me.
   </select>
 </div>
 
-<label for="select" class="col-lg-2 control-label">I feel emotionally close to my partner?</label>
+<label for="select" class="col-lg-10 control-label">I feel emotionally close to my partner?</label>
 
-<div class="col-lg-10">
+<div class="col-lg-2">
   <select name="a10" class="form-control" id="select">
     <option value="1">1</option>
     <option value="2">2</option>
